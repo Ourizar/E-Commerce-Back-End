@@ -14,38 +14,30 @@ Product.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
-      auto_increment: true,
+      autoIncrement: true,
     },
     product_name: {
-      id: {
         type: DataTypes.STRING,
         allowNull: false,
-      },
     },
     price: {
-      id: {
         type: DataTypes.DECIMAL,
         allowNull: false,
         validate: { isDecimal: true },
-      },
     },
     stock: {
-      id: {
         type: DataTypes.INTEGER,
         allowNull: false,
         default: 10,
         validate: { isNumeric: true },
-      },
     },
     category_id: {
-      id: {
         type: DataTypes.INTEGER,
         allowNull: false,
         primaryKey: true,
         references: {
-          model: "Category",
+          model: "category",
           key: "id",
-        },
       },
     },
   },
